@@ -1,3 +1,37 @@
+Making VM ISO 
+
+
+
+===============================================================================================================
+
+Commands you'll need - 
+Creating the macOS ISO
+- hdiutil create -o /tmp/monterey -size 15000m -volname monterey -layout SPUD -fs HFS+J
+- hdiutil attach /tmp/monterey.dmg -noverify -mountpoint /Volumes/monterey
+- sudo /Applications/Install\ macOS\ Monterey.app/Contents/Resources/createinstallmedia --volume /Volumes/monterey —nointeraction
+- hdiutil detach /volumes/Install\ macOS\ Monterey
+- hdiutil convert /tmp/monterey.dmg -format UDTO -o ~/Desktop/Monterey.cdr
+- mv ~/Desktop/Monterey.cdr ~/Desktop/Monterey.iso
+
+===============================================================================================================
+
+DataStore In ESXI
+cd /hdd/iso
+===============================================================================================================
+upload to iso dir in Datastore
+
+Unlocker and Patching esxi
+https://github.com/erickdimalanta/#es...#esxi-unlocker-master.zip
+- unzip esxi-unlocker-master.zip
+- chmod 775 -R esxi-unlocker-301/
+- cd esxi-unlocker-301/
+- ./esxi-install.sh
+- ./esxi-smctest.sh
+
+===============================================================================================================
+
+
+
 macOS Unlocker V3.0.2 for VMware ESXi
 =====================================
 
