@@ -1,17 +1,49 @@
 Making VM ISO 
 
+Commands you'll need - 
+Creating the macOS ISO BigSur
 
+hdiutil create -o /tmp/bigsur -size 15000m -volname bigsur -layout SPUD -fs HFS+J
+hdiutil attach /tmp/bigsur.dmg -noverify -mountpoint /Volumes/bigsur
+sudo /Applications/Install\ macOS\ BigSur.app/Contents/Resources/createinstallmedia --volume /Volumes/bigsur —nointeraction
+hdiutil detach /volumes/Install\ macOS\ BigSur
+hdiutil convert /tmp/bigsure.dmg -format UDTO -o ~/Desktop/BigSur.cdr
+mv ~/Desktop/Monterey.cdr ~/Desktop/BigSur.iso
 
 ===============================================================================================================
 
 Commands you'll need - 
-Creating the macOS ISO
-- hdiutil create -o /tmp/monterey -size 15000m -volname monterey -layout SPUD -fs HFS+J
-- hdiutil attach /tmp/monterey.dmg -noverify -mountpoint /Volumes/monterey
-- sudo /Applications/Install\ macOS\ Monterey.app/Contents/Resources/createinstallmedia --volume /Volumes/monterey —nointeraction
-- hdiutil detach /volumes/Install\ macOS\ Monterey
-- hdiutil convert /tmp/monterey.dmg -format UDTO -o ~/Desktop/Monterey.cdr
-- mv ~/Desktop/Monterey.cdr ~/Desktop/Monterey.iso
+Creating the macOS ISO Monterey
+
+hdiutil create -o /tmp/monterey -size 15000m -volname monterey -layout SPUD -fs HFS+J
+hdiutil attach /tmp/monterey.dmg -noverify -mountpoint /Volumes/monterey
+sudo /Applications/Install\ macOS\ Monterey.app/Contents/Resources/createinstallmedia --volume /Volumes/monterey —nointeraction
+hdiutil detach /volumes/Install\ macOS\ Monterey
+hdiutil convert /tmp/monterey.dmg -format UDTO -o ~/Desktop/Monterey.cdr
+mv ~/Desktop/Monterey.cdr ~/Desktop/Monterey.iso
+
+===============================================================================================================
+Commands you'll need - 
+Creating the macOS ISO Ventura
+
+hdiutil create -o /tmp/ventura -size 15000m -volname ventura -layout SPUD -fs HFS+J
+hdiutil attach /tmp/ventura.dmg -noverify -mountpoint /Volumes/ventura
+sudo /Applications/Install\ macOS\ Ventura.app/Contents/Resources/createinstallmedia --volume /Volumes/ventura —nointeraction
+hdiutil detach /volumes/Install\ macOS\ Ventura
+hdiutil convert /tmp/Ventura.dmg -format UDTO -o ~/Desktop/Ventura.cdr
+mv ~/Desktop/Ventura.cdr ~/Desktop/Ventura.iso
+
+===============================================================================================================
+
+Commands you'll need - 
+Creating the macOS ISO Sonoma
+
+hdiutil create -o /tmp/sonoma -size 15000m -volname sonoma -layout SPUD -fs HFS+J
+hdiutil attach /tmp/sonoma.dmg -noverify -mountpoint /Volumes/sonoma
+sudo /Applications/Install\ macOS\ Sonoma.app/Contents/Resources/createinstallmedia --volume /Volumes/sonoma —nointeraction
+hdiutil detach /volumes/Install\ macOS\ Sonoma
+hdiutil convert /tmp/Sonoma.dmg -format UDTO -o ~/Desktop/Sonoma.cdr
+mv ~/Desktop/Ventura.cdr ~/Desktop/Sonoma.iso
 
 ===============================================================================================================
 
